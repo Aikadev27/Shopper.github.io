@@ -33,5 +33,14 @@ html{
     display: flex;
     flex-wrap: wrap;
 }
+/* animation */
 
-/* navbar -  top */
+@keyframes fadeIn {
+    from
+    {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

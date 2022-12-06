@@ -1,3 +1,4 @@
+/* header */
 .header
 {
     height: 120px;
@@ -15,6 +16,9 @@
 .header__navbar-item{
     margin: 0 8px;
     position: relative;
+}
+.header__navbar-item--QR:hover>.header__qr{
+    display: block;
 }
 .header__navbar-item-link,
 .header__navbar-item{
@@ -60,3 +64,45 @@
     cursor: text;
     color: var(--white-color);
 }
+/* QR code header  */
+.header__qr{
+    background-color: var(--white-color);
+    width: 185px;
+    position: absolute;
+    left: 0;
+    top: 150%;
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+    z-index: 1;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+    animation: fadeIn ease-in-out .4s   ;
+}
+.header__qr::before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    left: 0;
+    top: -16px;
+    display: block;
+}
+.header__qr-img{
+    width: 100%;
+}
+.header__qr-apps{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    order: 2;
+}
+.header__qr-network{
+    height: 16px;
+    margin: 4px 0;
+}
+.apps-link:nth-child(1 + 3){
+    margin-left: 11px;
+}
+
