@@ -11,6 +11,13 @@
     font-weight: 300;
     padding: 0;
     margin: 0;
+    user-select: text;
+    
+}
+*::selection
+{
+    background-color: var(--main-color);
+    color: var(--white-color)
 }
 html{
     font-size: 62.5%;
@@ -54,6 +61,7 @@ html{
     bottom: 0;
     left: 0;
     display: flex;
+    animation: fadeIn linear .5s;
 }
 .modal__overlay
 {
@@ -65,13 +73,60 @@ html{
 }
 .modal__body
 {
-    background-color: var(--white-color);
+    
     margin: auto;
     z-index: 2;
     position: relative;
-    border-radius: 4px;
+    animation: scalein linear .3s;
+    
 }
-.modal__inner
-{
+/* button 
+ */
 
-}
+ .btn
+ {
+    min-width: 142px;
+    height: 34px;
+    background-color: var(--white-color);
+    border: none;
+    font-size: 1.4rem;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 2px;
+    color: var(--black-color);
+    padding: 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .btn.btn--normal:hover
+ {
+    background-color: rgba(0, 0, 0, .05);
+ }
+ .btn.btn--primary{
+    background-color: var(--main-color);
+    color: var(--white-color);
+ }
+
+ .btn.btn--disable
+ {
+    cursor: default;
+    color: #ccc;
+    background-color: #999;
+ }
+ .btn.btn--size-s{
+    height: 32px;
+    font-size: 12px;
+    padding: 0 8px;
+
+ }
+ @keyframes scalein {
+    from
+    {
+        transform: scale(0.5);
+    }
+    to
+    {
+        transform: scale(1.0);
+    }
+ }
