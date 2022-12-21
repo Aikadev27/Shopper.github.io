@@ -1172,7 +1172,7 @@
     color: #737373;
     text-decoration: none;
     padding: 2px 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     font-weight: 400;
 }
