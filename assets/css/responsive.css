@@ -1,0 +1,124 @@
+/* Mobile & tablet*/
+@media (max-width:1023px)
+{
+:root{
+    --header-height:68px;
+    --navbar-height: 0px;
+}
+
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .header__cart-list{
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        padding: 0 ;
+    }
+    .header__cart-list::after{
+        display: none;
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+    }
+    .header__sort-bar{
+        display: flex;
+    }
+    .app__container{
+       
+        margin-top: calc(var(--header-height) + var(--header__sort-bar-height)) ;
+    }
+    .app__content{
+        padding-top: 8px;
+    }
+    .mobile-category{
+        display: block;
+    }
+}
+/* only tablet */
+@media(min-width:740px) and ( max-width:1023px)
+{
+    .hide-on-tablet{
+        display: none;
+    }
+}
+/* only mobile */
+@media(max-width:739px)
+{
+    .hide-on-mobile{
+        display: none;
+    }
+    .header-with-search{
+        
+        justify-content: space-between;
+        
+    }
+    .header__logo,
+    .header__cart{
+        width: unset;
+    }
+    .header__cart-notice{
+        right: 0;
+    }
+    .header__mobile-search{
+        display: block;
+    }
+    .header__search-checkbox:checked ~ .header__search {
+        display: flex;
+    }
+    .header__search{
+        position: fixed;
+        right: 0;
+        left: 0;
+        height: 46px;
+        z-index: 1;
+        padding: 0 8px;
+        display:  none;
+        animation: search-mobile-animate linear .3s both;
+        box-shadow: 0 1px 2px rgba(0 0 0 .05);
+    }
+    .header__search-history{
+        position: fixed;
+        width: 100%;
+        top: calc(var(--header-height) + var(--header__sort-bar-height));
+    }
+    .pagination-item{
+        margin: 0;
+    }
+    .app__content{
+        margin: 0 4px;
+    }
+    .footer{
+        padding: 0 16px;
+    }
+    .footer__content{
+        padding: 0 16px;
+    }
+    .footer__heading,
+    .footer__list-item{
+        text-align: center;
+    }
+    .footer__download{
+        justify-content: center;
+
+    }
+    .footer__download-apps{
+        flex: unset;
+    }
+    @keyframes search-mobile-animate {
+        from{
+            opacity: 0;
+            top: calc(var(--header-height)/2);
+            
+        }
+        to{
+            opacity: 1;
+            top: var(--header-height);
+        }
+    }
+}
